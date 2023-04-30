@@ -1,6 +1,6 @@
 # AdminLTE-pelican
 
-This is a pelican port of the bootstrap theme [AdminLTE](https://github.com/ColorlibHQ/AdminLTE/). Currently under construction.
+This is a simplified pelican port of the bootstrap theme [AdminLTE](https://github.com/ColorlibHQ/AdminLTE/). Currently under construction.
 
 
 

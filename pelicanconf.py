@@ -8,6 +8,12 @@ TIMEZONE = 'Europe/Rome'
 
 DEFAULT_LANG = 'en'
 
+# Theme settings
+THEME = 'adminlte'
+STATIC_DIR = 'theme'
+
+DISPLAY_LEFTNAVBAR = False
+
 # Plugins
 PLUGINS = []
 
@@ -32,3 +38,4 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+DELETE_OUTPUT_DIRECTORY = True
