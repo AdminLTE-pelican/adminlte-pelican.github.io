@@ -7,22 +7,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>This is another article</title>
+  <title>This is also an article</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://adminlte-pelican.github.io/theme/plugins/fontawesome-free/css/all.min.css">
+  <link href="https://adminlte-pelican.github.io/theme/plugins/fontawesome-free/css/fontawesome.min.css" rel="stylesheet">
+  <link href="https://adminlte-pelican.github.io/theme/plugins/fontawesome-free/css/brands.min.css" rel="stylesheet">
+  <link href="https://adminlte-pelican.github.io/theme/plugins/fontawesome-free/css/solid.min.css" rel="stylesheet">
   <!-- Theme style -->
   <link rel="stylesheet" href="https://adminlte-pelican.github.io/theme/css/adminlte.min.css">
 
 
+
 </head>
-<body class="hold-transition dark-mode sidebar-mini">
+<body class="hold-transition layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-dark">
+  <nav class="main-header navbar navbar-expand">
 
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -32,27 +35,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+        <li class="nav-item">
+            <div class="custom-control custom-switch theme-switch-wrapper nav-link">
+                <label class="theme-switch" for="checkbox">
+              <input type="checkbox" class="custom-control-input theme-switch" id="checkbox">
+              <label class="theme-switch custom-control-label" for="checkbox">Dark Mode</label>
             </div>
-          </form>
-        </div>
-      </li>
+        </li>
 
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -76,20 +65,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <span class="brand-text font-weight-light">AdminLTE pelican</span>
     </a>
 
-    <!-- Sidebar -->
     <div class="sidebar os-host-scrollbar-horizontal-hidden"">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="https://adminlte-pelican.github.io/theme/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">admin</a>
-        </div>
-      </div>
-
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
+      <div class="form-inline mt-3 pb-3 d-flex">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -105,77 +83,72 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          <li class="nav-header">PAGES</li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/pages/about.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="https://adminlte-pelican.github.io/about/" class="nav-link">
+              <i class="nav-icon fas fa-bookmark"></i>
               <p>
                 About
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="https://adminlte-pelican.github.io/widgets/" class="nav-link">
+              <i class="nav-icon fas fa-bookmark"></i>
               <p>
                 Widgets
               </p>
             </a>
           </li>
+          <li class="nav-header">CATEGORIES</li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/category/category1.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="https://adminlte-pelican.github.io/category1/" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
               <p>
                 Category1
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/category/category2.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="https://adminlte-pelican.github.io/category2/" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
               <p>
                 Category2
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/category/category3.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="https://adminlte-pelican.github.io/category3/" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
               <p>
                 Category3
               </p>
             </a>
           </li>
+          <hr>
+          <li class="nav-item">
+            <a href="https://adminlte-pelican.github.io/archives/" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
+              <p>
+                Archives
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
-    </div>    <!-- /.sidebar -->
-  </aside>
 
+      <!-- /.sidebar-menu -->
+    </div>
+  </aside>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">This is another article</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-<div class="row">
-          <div class="col-lg-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique ante lacus, ut finibus tortor elementum ac. Suspendisse potenti. Vestibulum ac egestas leo. Mauris hendrerit egestas tortor facilisis vulputate. Nullam lorem augue, vestibulum dapibus laoreet a, aliquet eu massa. Donec ut arcu vulputate, efficitur elit et, consequat massa. Aenean blandit, nisi in ornare fringilla, diam nibh sodales purus, ac consectetur quam arcu at tellus. Morbi sed tempus ipsum, vitae iaculis massa.</p>
+        <div class="row">
+        <div class="col-xl-7">
+            <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">This is also an article</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique ante lacus, ut finibus tortor elementum ac. Suspendisse potenti. Vestibulum ac egestas leo. Mauris hendrerit egestas tortor facilisis vulputate. Nullam lorem augue, vestibulum dapibus laoreet a, aliquet eu massa. Donec ut arcu vulputate, efficitur elit et, consequat massa. Aenean blandit, nisi in ornare fringilla, diam nibh sodales purus, ac consectetur quam arcu at tellus. Morbi sed tempus ipsum, vitae iaculis massa.</p>
 <p>Vestibulum at condimentum nisl. Donec aliquam sem sed ex tincidunt, id ornare enim tempus. Aliquam ultrices mi et nunc volutpat sodales. Phasellus sagittis, augue rutrum finibus consequat, sapien turpis molestie sapien, nec cursus nunc diam eu risus. In at volutpat tortor. Sed nunc lorem, imperdiet vitae nisi nec, placerat semper ligula. Donec vulputate orci lorem. Donec ultrices felis at ullamcorper convallis. Mauris eu efficitur turpis. Vivamus ante est, blandit eu odio ut, mollis posuere leo.</p>
 <p>Quisque a pellentesque risus. In a lorem ultricies, suscipit tellus sed, fringilla magna. Aenean finibus semper nulla, id aliquam nibh dignissim ut. Integer ultricies ornare ex. Duis lobortis turpis quis nulla pretium ultrices. Curabitur mollis magna sit amet ligula auctor, nec blandit tortor lacinia. Proin sit amet laoreet nibh, et tempor diam. Pellentesque luctus velit ipsum, quis aliquam tellus tempor eget. Aliquam efficitur magna id ullamcorper suscipit. Donec vitae neque at lorem tincidunt consequat vitae in sapien. Aliquam erat volutpat. Pellentesque quis leo maximus, dictum orci et, dictum urna. Maecenas pulvinar ac lectus vel venenatis.</p>
 <p>Vestibulum malesuada lorem libero, vel finibus lacus suscipit vitae. Nulla magna velit, egestas ac orci vel, porta tempus massa. Ut mattis diam ultricies, volutpat lectus sed, lacinia risus. Sed lobortis, dui eu euismod tempor, elit orci scelerisque eros, quis vestibulum leo velit mattis quam. Suspendisse nec facilisis nisi. Duis hendrerit commodo semper. In vulputate sapien at nulla porttitor elementum.</p>
@@ -185,8 +158,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <p>Integer lacinia rhoncus nibh, nec sodales metus auctor id. Nunc aliquet eros et tellus consectetur cursus. Quisque metus ex, molestie nec ornare sed, vehicula nec lacus. Etiam nec ante quis quam condimentum bibendum. Phasellus massa quam, commodo vitae viverra eget, hendrerit non magna. Nulla sit amet nunc hendrerit lectus placerat placerat. Fusce luctus sodales nisi ut accumsan. Vivamus a felis vitae mi blandit aliquet. Etiam viverra massa sed mauris euismod, id consequat mauris viverra. Proin fringilla ligula metus, in dignissim tortor maximus ac.</p>
 <p>Vivamus eu felis non dolor bibendum maximus consequat et erat. Pellentesque venenatis, arcu ut sodales sagittis, risus dolor condimentum sem, id iaculis turpis mi pretium metus. Proin a viverra orci. Sed eu erat luctus, maximus magna non, congue nibh. Aliquam ipsum sapien, fringilla quis finibus at, sodales sit amet mi. Quisque vitae euismod ante. Vestibulum convallis ac sapien ac elementum. Quisque egestas facilisis mi ac pellentesque. Mauris ultricies augue congue leo sagittis, sed rutrum leo interdum.</p>
 <p>Fusce sed mi tellus. Nullam accumsan suscipit ante, nec scelerisque nisl. Donec nec tortor nulla. Nulla dapibus suscipit lectus id semper. Quisque nulla lacus, fringilla ut varius laoreet, lacinia nec elit. Nunc tristique lorem eget sodales venenatis. Nullam velit sem, viverra tempus lacus sed, faucibus pretium libero. Sed sed justo aliquet, commodo ex vel, eleifend eros. Ut id augue mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur egestas nisi in pharetra auctor. Proin vel sapien vitae purus fringilla faucibus at vel massa.</p>
-          </div>
-</div>
+
+
+
+
+        </div>
+        <div class="col-xl-5">
+
+
+        </div>
+        </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -208,10 +189,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer text-sm">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      🖖 Live long and Prosper
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Made using <a href="https://docs.getpelican.com/en/latest/">Pelican</a> and <a href="https://adminlte.io">AdminLTE.io</a></strong>
   </footer></div>
 <!-- ./wrapper -->
 
@@ -223,5 +204,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://adminlte-pelican.github.io/theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="https://adminlte-pelican.github.io/theme/js/adminlte.min.js"></script>
+<script>
+  var toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+  var currentTheme = localStorage.getItem('theme');
+  var mainHeader = document.querySelector('.main-header');
+
+  if (currentTheme) {
+    if (currentTheme === 'dark') {
+      if (!document.body.classList.contains('dark-mode')) {
+        document.body.classList.add("dark-mode");
+      }
+      if (mainHeader.classList.contains('navbar-light')) {
+        mainHeader.classList.add('navbar-dark');
+        mainHeader.classList.remove('navbar-light');
+      }
+      toggleSwitch.checked = true;
+    }
+  }
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      if (!document.body.classList.contains('dark-mode')) {
+        document.body.classList.add("dark-mode");
+      }
+      if (mainHeader.classList.contains('navbar-light')) {
+        mainHeader.classList.add('navbar-dark');
+        mainHeader.classList.remove('navbar-light');
+      }
+      localStorage.setItem('theme', 'dark');
+    } else {
+      if (document.body.classList.contains('dark-mode')) {
+        document.body.classList.remove("dark-mode");
+      }
+      if (mainHeader.classList.contains('navbar-dark')) {
+        mainHeader.classList.add('navbar-light');
+        mainHeader.classList.remove('navbar-dark');
+      }
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
+</script>
 </body>
 </html>
