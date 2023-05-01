@@ -1,29 +1,88 @@
 {% extends 'base.html' %}
 
-{% block title %}Articles{% endblock %}
-
-{% block pagetitle %}Article list{% endblock %}
-
 {% block css %}
 
 {% endblock %}
 
-{% block content %}
-<div class="row">
-          <div class="col-lg-12">
-            {% for article in articles %}
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{ article.title }}</h5>
+{% block content_wrapper %}
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-7">
+                <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
+                    <div class="list-group list-group-flush mb-3">
+                    {% block content %}
+                    {% for article in (articles_page.object_list if articles_page else articles) %}
 
-                <p class="card-text">
-                  {{ article.summary }}
-                </p>
+                    <div class="card">
+                      <div class="card-body">
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="text-primary"><h5 class="card-title">{{ article.title }}</h5></a>
 
-                <a href="{{ SITEURL }}/{{ article.url }}" class="card-link">Read More...</a>
-              </div>
+                        <p class="card-text">
+                          {{ article.summary }}
+                        </p>
+
+                        <a href="#" class="card-link text-muted">Read more...</a>
+                      </div>
+                    </div>
+
+                    {% endfor %}
+                    {% endblock %}
+                    </div>
+
+                <!-- FAQ Accordion 1-->
+                    {% include "includes/pagination.html" %}
             </div>
-            {% endfor %}
-          </div>
-</div>
+            <div class="col-xl-5">
+                {% block sidebar %}
+                <div class="row gx-5">
+                    <div class="col-md-6">
+                        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
+                            <div class="card">
+                              <!-- /.card-body -->
+                              <div class="card-footer p-0">
+                                <ul class="nav nav-pills flex-column">
+                                  {% for cat, articles in categories %}
+                                  <li class="nav-item">
+                                    <a href="{{ SITEURL }}/{{ cat.url }}" class="nav-link">
+                                      {{ cat | upper }}
+                                      <span class=" badge badge-primary float-right">
+                                        {{ articles | length}}</span>
+                                    </a>
+                                  </li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <!-- /.footer -->
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Tags</h4>
+                            <div class="card">
+                              <!-- /.card-body -->
+                              <div class="card-footer p-0">
+                                <ul class="nav nav-pills flex-column">
+                                  {% for tag, articles in tags %}
+                                  <li class="nav-item">
+                                    <a href="{{ SITEURL }}/{{ tag.url }}" class="nav-link">
+                                      {{ tag | upper }}
+                                      <span class=" badge badge-primary float-right">
+                                        {{ articles | length}}</span>
+                                    </a>
+                                  </li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <!-- /.footer -->
+                            </div>
+                    </div>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
 {% endblock %}

@@ -2,16 +2,36 @@
 
 {% block title %}{{ article.title }}{% endblock %}
 
-{% block pagetitle %}{{ article.title }}{% endblock %}
-
 {% block css %}
 
 {% endblock %}
 
-{% block content %}
-<div class="row">
-          <div class="col-lg-12">
-            {{ article.content }}
-          </div>
-</div>
+{% block content_wrapper %}
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+        <div class="col-xl-7">
+            <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">{{ article.title }}</h4>
+                {% block content %}{{ article.content }}
+
+                    {% include "includes/comments.html"%}
+
+                {% endblock %}
+
+            {% block comments %}
+            {% endblock %}
+
+        </div>
+        <div class="col-xl-5">
+            {% block sidebar %}
+
+
+            {% endblock %}
+        </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
 {% endblock %}

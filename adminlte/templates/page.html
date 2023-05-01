@@ -1,15 +1,131 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ page.title }}{% endblock %}
-
-{% block pagetitle %}{{ page.title }}{% endblock %}
-
 {% block css %}
 
 {% endblock %}
 
-{% block content %}
+{% block content_wrapper %}
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+        <div class="col-xl-7">
+            <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">{{ page.title }}</h4>
+                {% block content %}{{ page.content }}
+                {% if page.comments == 'True' %}
+                    {% include "comments.html"%}
+                {% endif %}
+                {% endblock %}
 
-            {{ page.content }}
+            {% block comments %}
+            {% endblock %}
 
+        </div>
+        <div class="col-xl-5">
+            {% block sidebar %}
+                <div class="row gx-5">
+                    <div class="col-xl-12">
+                            {% if page.parents %}
+                        <h2 class="fw-bolder fs-5 mb-3">Nav Tree</h2>
+                            <ul>{% for child in page.parents[0].children  %}
+                                <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                {{child.title}}
+                                </a>
+                                <ul>{% for child in child.children %}
+                                    <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                    {{child.title}}
+                                    </a>
+                                    <ul>{% for child in child.children %}
+                                        <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                        {{child.title}}
+                                        </a>
+                                        <ul>{% for child in child.children %}
+                                            <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                            {{child.title}}
+                                            </a>
+                                            <ul>{% for child in child.children %}
+                                                <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                                {{child.title}}
+                                                </a>
+                                                <ul>{% for child in child.children %}
+                                                    <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                                    {{child.title}}
+                                                    </a>
+
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
+
+                            {% else %}
+                            {% if page.children %}
+                        <h2 class="fw-bolder fs-5 mb-3">Nav Tree</h2>{% endif %}
+                            <ul>{% for child in page.children  %}
+                                <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                {{child.title}}
+                                </a>
+                                <ul>{% for child in child.children %}
+                                    <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                    {{child.title}}
+                                    </a>
+                                    <ul>{% for child in child.children %}
+                                        <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                        {{child.title}}
+                                        </a>
+                                        <ul>{% for child in child.children %}
+                                            <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                            {{child.title}}
+                                            </a>
+                                            <ul>{% for child in child.children %}
+                                                <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                                {{child.title}}
+                                                </a>
+                                                <ul>{% for child in child.children %}
+                                                    <li><a href="{{ SITEURL }}/{{child.url}}" class="list-group-item list-group-item-action">
+                                                    {{child.title}}
+                                                    </a>
+
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                    </div>
+                </div>
+
+            {% endblock %}
+        </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
 {% endblock %}
