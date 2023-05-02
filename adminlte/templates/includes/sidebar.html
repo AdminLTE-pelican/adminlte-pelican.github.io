@@ -41,6 +41,17 @@
             </a>
           </li>
           {% endfor %}
+          <li class="nav-header">LINKS</li>
+          {% for link, url in LINKS %}
+          <li class="nav-item">
+            <a href="{{ url }}" class="nav-link">
+              <i class="nav-icon fas fa-link"></i>
+              <p>
+                {{ link }}
+              </p>
+            </a>
+          </li>
+          {% endfor %}
           <hr>
           <li class="nav-item">
             <a href="{{ SITEURL }}/archives/" class="nav-link {% if page_name == 'archives/index' %} active{% endif %}">

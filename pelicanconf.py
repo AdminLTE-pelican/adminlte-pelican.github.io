@@ -1,7 +1,7 @@
 AUTHOR = 'admin'
 SITENAME = 'AdminLTE pelican'
 SITEURL = ''
-
+EMAIL = 'email@example.com'
 PATH = 'content'
 
 TIMEZONE = 'Europe/Rome'
@@ -35,8 +35,9 @@ THEME = 'adminlte'
 PYGMENTS_STYLE = 'nord'
 
 STATIC_DIR = 'theme'
-NAV_IMAGE = 'zen.jpg'
+
 RECENT_POST_COUNT = 2
+
 # Plugins
 PLUGINS = []
 
@@ -48,10 +49,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('Github source', 'https://github.com/AdminLTE-pelican/adminlte-pelican.github.io'),
+         ('Pelican', 'https://getpelican.com/'),
+         ('Python.org', 'https://www.python.org/'),)
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),

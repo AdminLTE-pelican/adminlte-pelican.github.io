@@ -1,6 +1,7 @@
-Title: About
-
-This is an about page.
+Title: Index
+template: index-page
+save_as: index.html
+status: hidden
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique ante lacus, ut finibus tortor elementum ac. Suspendisse potenti. Vestibulum ac egestas leo. Mauris hendrerit egestas tortor facilisis vulputate. Nullam lorem augue, vestibulum dapibus laoreet a, aliquet eu massa. Donec ut arcu vulputate, efficitur elit et, consequat massa. Aenean blandit, nisi in ornare fringilla, diam nibh sodales purus, ac consectetur quam arcu at tellus. Morbi sed tempus ipsum, vitae iaculis massa.
 
