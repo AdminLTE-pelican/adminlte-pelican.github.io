@@ -7,3 +7,65 @@
 {% block css %}
 
 {% endblock %}
+
+{% block content_wrapper %}
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row gx-5">
+            <div class="col-xl-7">
+                <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
+                    <ul class="list-group list-group-flush mb-3">
+                        {% for article in (articles_page.object_list if articles_page else articles) %}
+                              <a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item list-group-item-action link-dark">
+                                  <div class="row">
+                                    <div class="col-9">
+                                      <h6 class="mb-1">{{ article.title }}</h6>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                      <span class="text-muted">{{ article.locale_date}}</small>
+                                    </div>
+                                  </div>
+                              </a>
+                        {% endfor %}
+                        {% include "includes/pagination.html" %}
+                    </ul>
+                <!-- FAQ Accordion 1-->
+                    {% include "includes/pagination.html" %}
+            </div>
+            <div class="col-xl-5">
+                {% block sidebar %}
+                <div class="row gx-5">
+                    <div class="col-md-6">
+                        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
+                            <div class="list-group list-group-flush">
+                              {% for cat, articles in categories %}
+                                  <a href="{{ SITEURL }}/{{ cat.url }}" class="list-group-item list-group-item-action link-dark">
+                                          {{ cat | upper }}
+                                          <span class=" badge badge-info float-right">
+                                        {{ articles | length}}</span>
+                                  </a>
+                              {% endfor %}
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Tags</h4>
+                            <div class="list-group list-group-flush">
+                              {% for tag, articles in tags %}
+                                  <a href="{{ SITEURL }}/{{ tag.url }}" class="list-group-item list-group-item-action link-dark">
+                                          {{ tag | upper }}
+                                          <span class="badge badge-info float-right">
+                                        {{ articles | length}}</span>
+                                  </a>
+                              {% endfor %}
+                            </div>
+                    </div>
+
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+{% endblock %}

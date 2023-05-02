@@ -1,0 +1,21 @@
+<div class="row gx-5">
+    <div class="col-xl-12">
+        {% for cat, articles in categories %}
+            <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Recent posts In {{ cat }}:</h4>
+        <div class="list-group list-group-flush mb-3">
+            {% for article in articles[:RECENT_POST_COUNT] %}
+                  <a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item list-group-item-action link-dark">
+                      {{ article.title }}
+                      <small class="text-muted"></small>
+                  </a>
+            {% endfor %}
+            <div class="list-group-item text-right mb-1 mb-xl-0">
+                <a class="text-decoration-none text-muted" href="{{SITEURL}}/{{ cat.url }}">
+                    More articles...
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+

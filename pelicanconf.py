@@ -32,13 +32,11 @@ ARCHIVES_URL = 'archives/'
 
 # Theme settings
 THEME = 'adminlte'
-BOOTSWATCH = 'lumen'
-DARK_MODE = False
+PYGMENTS_STYLE = 'nord'
 
 STATIC_DIR = 'theme'
-
-DISPLAY_LEFTNAVBAR = False
-
+NAV_IMAGE = 'zen.jpg'
+RECENT_POST_COUNT = 2
 # Plugins
 PLUGINS = []
 

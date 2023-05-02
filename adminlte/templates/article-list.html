@@ -8,29 +8,26 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row gx-5">
             <div class="col-xl-7">
                 <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
-                    <div class="list-group list-group-flush mb-3">
                     {% block content %}
                     {% for article in (articles_page.object_list if articles_page else articles) %}
-
-                    <div class="card">
-                      <div class="card-body">
-                        <a href="{{ SITEURL }}/{{ article.url }}" class="text-primary"><h5 class="card-title">{{ article.title }}</h5></a>
-
-                        <p class="card-text">
-                          {{ article.summary }}
-                        </p>
-
-                        <a href="#" class="card-link text-muted">Read more...</a>
-                      </div>
+                    <div class="list-group list-group-flush mb-3">
+                      <a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item list-group-item-action link-dark">
+                          <div class="row mt-2">
+                            <div class="col-9">
+                              <h5 class="mb-2">{{ article.title | title }}</h5>
+                              <p>{{ article.summary }}</p>
+                            </div>
+                            <div class="col-3 text-right">
+                              <span class="text-muted">19 Mar 2023</span>
+                            </div>
+                          </div>
+                      </a>
                     </div>
-
                     {% endfor %}
                     {% endblock %}
-                    </div>
-
                 <!-- FAQ Accordion 1-->
                     {% include "includes/pagination.html" %}
             </div>
@@ -39,44 +36,29 @@
                 <div class="row gx-5">
                     <div class="col-md-6">
                         <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
-                            <div class="card">
-                              <!-- /.card-body -->
-                              <div class="card-footer p-0">
-                                <ul class="nav nav-pills flex-column">
-                                  {% for cat, articles in categories %}
-                                  <li class="nav-item">
-                                    <a href="{{ SITEURL }}/{{ cat.url }}" class="nav-link">
-                                      {{ cat | upper }}
-                                      <span class=" badge badge-primary float-right">
+                            <div class="list-group list-group-flush">
+                              {% for cat, articles in categories %}
+                                  <a href="{{ SITEURL }}/{{ cat.url }}" class="list-group-item list-group-item-action link-dark">
+                                          {{ cat | upper }}
+                                          <span class=" badge badge-info float-right">
                                         {{ articles | length}}</span>
-                                    </a>
-                                  </li>
-                                  {% endfor %}
-                                </ul>
-                              </div>
-                              <!-- /.footer -->
+                                  </a>
+                              {% endfor %}
                             </div>
                     </div>
                     <div class="col-md-6">
                         <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Tags</h4>
-                            <div class="card">
-                              <!-- /.card-body -->
-                              <div class="card-footer p-0">
-                                <ul class="nav nav-pills flex-column">
-                                  {% for tag, articles in tags %}
-                                  <li class="nav-item">
-                                    <a href="{{ SITEURL }}/{{ tag.url }}" class="nav-link">
-                                      {{ tag | upper }}
-                                      <span class=" badge badge-primary float-right">
+                            <div class="list-group list-group-flush">
+                              {% for tag, articles in tags %}
+                                  <a href="{{ SITEURL }}/{{ tag.url }}" class="list-group-item list-group-item-action link-dark">
+                                          {{ tag | upper }}
+                                          <span class="badge badge-info float-right">
                                         {{ articles | length}}</span>
-                                    </a>
-                                  </li>
-                                  {% endfor %}
-                                </ul>
-                              </div>
-                              <!-- /.footer -->
+                                  </a>
+                              {% endfor %}
                             </div>
                     </div>
+
                 </div>
                 {% endblock %}
             </div>

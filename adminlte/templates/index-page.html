@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ article.title }}{% endblock %}
-
 {% block css %}
 
 {% endblock %}
@@ -12,31 +10,28 @@
       <div class="container-fluid">
         <div class="row">
         <div class="col-xl-7">
-            <h1 class="fw-bolder fs-5 mb-3 mt-3">{{ article.title }}</h1>
-
+            <h1 class="fw-bolder fs-5 mb-3 mt-3">{{ page.title }}</h1>
                 {% block content %}
                 <div class="list-group list-group-flush mb-3">
                       <span  class="list-group-item list-group-item-action link-dark">
 
-                              {{ article.content }}
+                              {{ page.content }}
 
                       </span>
                 </div>
                 <div class="list-group list-group-flush mb-3">
+                    {% if page.comments == 'True' %}
                       {% include "includes/comments.html"%}
+                    {% endif %}
                 </div>
                 {% endblock %}
-
-
-            {% block comments %}
-            {% endblock %}
 
         </div>
         <div class="col-xl-5">
             {% block sidebar %}
 
-    {% include "includes/articleseries.html" %}
-    {% include "includes/recentposts.html" %}
+            {% include "includes/contact.html" %}
+            {% include "includes/recentposts.html" %}
 
             {% endblock %}
         </div>

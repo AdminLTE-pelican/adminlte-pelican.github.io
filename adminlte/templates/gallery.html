@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 
-
-
 {% block pagetitle %}{{ page.title }}{% endblock %}
 
-
 {% block css %}
-
-    <script type="text/javascript" src="{{ SITEURL }}/js/jquery.min.js"></script>
-
-    <link href="{{ SITEURL }}/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="{{ SITEURL }}/js/jquery.nanogallery2.min.js"></script>
-
+  <!-- nanogallery2 -->
+  <link  href="{{ SITEURL }}/theme/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+  <script  type="text/javascript" src="{{ SITEURL }}/theme/js/jquery.nanogallery2.min.js"></script>
 
 {% endblock %}
 
-{% block content %}
+{% block content_wrapper %}
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
         <div class="col-xl-12">
-            <!-- FAQ Accordion 1-->
-        <div class="row col-lg-12 col-xl-12 py-lg-12">
-
-            {{ page.content }}
-
-        </div></div>
-
+            <h1 class="fw-bolder fs-5 mb-3 mt-3">{{ page.title }}</h1>
+                {% block content %}
+                      {{ page.content }}
+                {% endblock %}
+        </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
 {% endblock %}
-

@@ -1,23 +1,18 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ SITEURL }}/" class="brand-link">
-      <img src="{{ SITEURL }}/theme/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">{{ SITENAME }}</span>
+    <a href="{{ SITEURL }}/" class="brand-link text-center">
+      <span class="brand-text  font-weight-light">{{ SITENAME }}</span>
     </a>
-
     <div class="sidebar os-host-scrollbar-horizontal-hidden"">
       <!-- SidebarSearch Form -->
-      <div class="form-inline mt-3 pb-3 d-flex">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+            <form class="form-inline mt-3 pb-3 d-flex" action="https://www.google.com/search" method="get" name="searchform" target="_blank">
+                <div class="input-group">
+                    <input class="form-control form-control-sidebar" type="text" placeholder="Search for..." name="q" required="required"  autocomplete="on" aria-label="Search for..." aria-describedby="btnNavbarSearch">
+                    <input name="sitesearch" type="hidden" value="{{ SITEURL }}">
+                    <button class="btn btn-sidebar"><i class="fas fa-search fa-fw"></i></button>
+                </div>
+            </form>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -25,12 +20,12 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-header">PAGES</li>
-          {% for page in pages %}
+          {% for p in pages %}
           <li class="nav-item">
-            <a href="{{ SITEURL }}/{{ page.url }}" class="nav-link">
+            <a href="{{ SITEURL }}/{{ p.url }}" class="nav-link{% if p == page %} active{% endif %}">
               <i class="nav-icon fas fa-bookmark"></i>
               <p>
-                {{ page.title }}
+                {{ p.title }}
               </p>
             </a>
           </li>
@@ -38,7 +33,7 @@
           <li class="nav-header">CATEGORIES</li>
           {% for cat, articles in categories %}
           <li class="nav-item">
-            <a href="{{ SITEURL }}/{{ cat.url }}" class="nav-link">
+            <a href="{{ SITEURL }}/{{ cat.url }}" class="nav-link {% if cat == page_name %}active{% endif %}">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 {{ cat }}
@@ -48,7 +43,7 @@
           {% endfor %}
           <hr>
           <li class="nav-item">
-            <a href="{{ SITEURL }}/archives/" class="nav-link">
+            <a href="{{ SITEURL }}/archives/" class="nav-link {% if page_name == 'archives/index' %} active{% endif %}">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 Archives

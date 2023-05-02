@@ -2,6 +2,8 @@
 
 This is a simplified pelican port of the bootstrap theme [AdminLTE](https://github.com/ColorlibHQ/AdminLTE/). Currently under construction and looking for contributors and collaborators.
 
+# THEME SETTINGS
+
 
 
 # License

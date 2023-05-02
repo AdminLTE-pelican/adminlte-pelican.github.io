@@ -1,0 +1,18 @@
+{% if article.series %}
+<div class="row gx-5">
+    <div class="col-xl-12">
+        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">This post is part of the "{{ article.series.name }}" series:</h4>
+            <div class="list-group list-group-flush mb-3">
+                {% for part_article in article.series.all %}
+                      <a href="{{ SITEURL }}/{{ part_article.url }}" class="list-group-item {% if part_article == article %}list-group-item-primary{% else %}list-group-item-action{% endif %} link-dark">
+                        <div class="d-flex w-100 justify-content-between">
+                          {{ part_article.title }}
+                          <small class="text-muted"></small>
+                        </div>
+                      </a>
+                {% endfor %}
+            </div>
+    </div>
+</div>
+
+{% endif %}
