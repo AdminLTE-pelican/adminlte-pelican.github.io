@@ -17,7 +17,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="https://adminlte-pelican.github.io/theme/plugins/fontawesome-free/css/solid.min.css" rel="stylesheet">
   <!-- Theme style -->
   <link rel="stylesheet" href="https://adminlte-pelican.github.io/theme/css/adminlte.min.css">
+  <link href="https://adminlte-pelican.github.io/css/pygments/nord.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="https://adminlte-pelican.github.io/theme/favicon.ico">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://adminlte-pelican.github.io/theme/js/jquery.min.js"></script>
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 </head>
@@ -60,23 +72,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="https://adminlte-pelican.github.io/" class="brand-link">
-      <img src="https://adminlte-pelican.github.io/theme/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE pelican</span>
+    <a href="https://adminlte-pelican.github.io/" class="brand-link text-center">
+      <span class="brand-text  font-weight-light">AdminLTE pelican</span>
     </a>
-
     <div class="sidebar os-host-scrollbar-horizontal-hidden"">
       <!-- SidebarSearch Form -->
-      <div class="form-inline mt-3 pb-3 d-flex">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+            <form class="form-inline mt-3 pb-3 d-flex" action="https://www.google.com/search" method="get" name="searchform" target="_blank">
+                <div class="input-group">
+                    <input class="form-control form-control-sidebar" type="text" placeholder="Search for..." name="q" required="required"  autocomplete="on" aria-label="Search for..." aria-describedby="btnNavbarSearch">
+                    <input name="sitesearch" type="hidden" value="https://adminlte-pelican.github.io">
+                    <button class="btn btn-sidebar"><i class="fas fa-search fa-fw"></i></button>
+                </div>
+            </form>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -262,10 +269,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
-<script src="https://adminlte-pelican.github.io/theme/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="https://adminlte-pelican.github.io/theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://adminlte-pelican.github.io/theme/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="https://adminlte-pelican.github.io/theme/js/adminlte.min.js"></script>
 <script>
