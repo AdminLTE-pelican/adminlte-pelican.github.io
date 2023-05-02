@@ -15,6 +15,7 @@ A demo of the template is available [here](https://adminlte-pelican.github.io/).
 * Custom 404 page template.
 
 # TODO
+
 [ ] Implement breadcrumb support for pages/subpages.
 [ ] Implement google analytics support.
 [ ] Implement comment support for disqus, graphcomments.
