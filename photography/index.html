@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome</title>
+  <title></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -30,6 +30,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- nanogallery2 -->
+  <link  href="https://adminlte-pelican.github.io/theme/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+  <script  type="text/javascript" src="https://adminlte-pelican.github.io/theme/js/jquery.nanogallery2.min.js"></script>
 
 
 </head>
@@ -100,7 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/photography/" class="nav-link">
+            <a href="https://adminlte-pelican.github.io/photography/" class="nav-link active">
               <i class="nav-icon fas fa-bookmark"></i>
               <p>
                 Photography
@@ -125,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte-pelican.github.io/category2/" class="nav-link active">
+            <a href="https://adminlte-pelican.github.io/category2/" class="nav-link ">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 Category2
@@ -160,74 +163,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <div class="row gx-5">
-            <div class="col-xl-7">
-                <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
-                    <div class="list-group list-group-flush mb-3">
-                      <a href="https://adminlte-pelican.github.io/this-is-also-an-article/" class="list-group-item list-group-item-action link-dark">
-                          <div class="row mt-2">
-                            <div class="col-9">
-                              <h5 class="mb-2">This Is Also An Article</h5>
-                              <p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique ante lacus, ut finibus tortor elementum ac. Suspendisse potenti. Vestibulum ac egestas leo. Mauris hendrerit egestas tortor facilisis vulputate. Nullam lorem augue, vestibulum dapibus laoreet a, aliquet eu massa. Donec ut arcu vulputate, efficitur elit et, consequat massa. Aenean blandit …</p></p>
-                            </div>
-                            <div class="col-3 text-right">
-                              <span class="text-muted">19 Mar 2023</span>
-                            </div>
-                          </div>
-                      </a>
-                    </div>
-                <!-- FAQ Accordion 1-->
-            </div>
-            <div class="col-xl-5">
-                <div class="row gx-5">
-                    <div class="col-md-6">
-                        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Categories</h4>
-                            <div class="list-group list-group-flush">
-                                  <a href="https://adminlte-pelican.github.io/category1/" class="list-group-item list-group-item-action link-dark">
-                                          CATEGORY1
-                                          <span class=" badge badge-info float-right">
-                                        1</span>
-                                  </a>
-                                  <a href="https://adminlte-pelican.github.io/category2/" class="list-group-item list-group-item-action link-dark">
-                                          CATEGORY2
-                                          <span class=" badge badge-info float-right">
-                                        1</span>
-                                  </a>
-                                  <a href="https://adminlte-pelican.github.io/category3/" class="list-group-item list-group-item-action link-dark">
-                                          CATEGORY3
-                                          <span class=" badge badge-info float-right">
-                                        1</span>
-                                  </a>
-                            </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 class="fw-bolder fs-5 mb-3 mt-3 text-bold">Tags</h4>
-                            <div class="list-group list-group-flush">
-                                  <a href="https://adminlte-pelican.github.io/tags/tag1/" class="list-group-item list-group-item-action link-dark">
-                                          TAG1
-                                          <span class="badge badge-info float-right">
-                                        3</span>
-                                  </a>
-                                  <a href="https://adminlte-pelican.github.io/tags/tag2/" class="list-group-item list-group-item-action link-dark">
-                                          TAG2
-                                          <span class="badge badge-info float-right">
-                                        3</span>
-                                  </a>
-                                  <a href="https://adminlte-pelican.github.io/tags/tag3/" class="list-group-item list-group-item-action link-dark">
-                                          TAG3
-                                          <span class="badge badge-info float-right">
-                                        3</span>
-                                  </a>
-                                  <a href="https://adminlte-pelican.github.io/tags/tag4/" class="list-group-item list-group-item-action link-dark">
-                                          TAG4
-                                          <span class="badge badge-info float-right">
-                                        3</span>
-                                  </a>
-                            </div>
-                    </div>
+        <div class="row">
+        <div class="col-xl-12">
+            <h1 class="fw-bolder fs-5 mb-3 mt-3">Photography</h1>
+                      <div ID="gallerymain" data-nanogallery2='{
+    "flickrAPIKey": "40b714ebdf245378906e4b9430016faa",
+    "userID": "66956608@N06",
+    "kind": "flickr",
+    "thumbnailWidth": "auto",
+    "thumbnailHeight": "400",
+    "thumbnailBorderVertical": 0,
+    "thumbnailBorderHorizontal": 0,
+    "colorScheme": {
+      "thumbnail": {
+        "background": "rgba(255,255,255,1)"
+      }
+    },
+    "thumbnailDisplayTransitionDuration": 500,
+    "thumbnailLabel": {
+      "position": "overImageOnBottom"
+    },
+    "thumbnailHoverEffect2": "labelAppear75",
+    "thumbnailAlignment": "center",
+    "thumbnailGutterWidth": 5,
+    "thumbnailGutterHeight": 5,
+    "breadcrumbOnlyCurrentLevel": false,
+    "thumbnailOpenImage": true
+  }'>
 
-                </div>
-            </div>
+</div>
+        </div>
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
